@@ -2,11 +2,11 @@
   "name": "task-worker-micro-service",
   "version": "1.0.0",
   "description": "Micro-service for processing tasks from MongoDB queue",
-  "main": "worker.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node worker.js",
-    "dev": "nodemon worker.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "mongodb": "^6.6.2"
