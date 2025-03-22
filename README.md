@@ -2,8 +2,8 @@
 
 A robust microservice designed to process tasks from a MongoDB queue, built with Node.js. This worker service is part of the Mister Tasker system, responsible for executing background tasks in a reliable and efficient manner.
 
-- **Live Application**: 
-You can preview the live version at [Mister Tasker on Render](https://mister-tasker-3b3p.onrender.com/).
+The service is supossed to work with the Mister Tasker - Task Management Application:
+https://github.com/Moshe-Alper/mister-tasker-frontend-react/tree/main
 
 ## Features
 
