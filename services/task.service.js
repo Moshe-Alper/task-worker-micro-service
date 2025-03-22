@@ -3,6 +3,13 @@ import { dbService } from './db.service.js'
 import { externalService } from './external.service.js'
 import { logger } from './logger.service.js'
 
+export const taskService = {
+    getNextTask,
+    performTask,
+    updateTask,
+    getTaskById
+}
+
 const MAX_TRIES = 5
 
 async function getNextTask() {
@@ -29,7 +36,6 @@ async function getNextTask() {
 
 async function performTask(task) {
     try {
-        // Update task status to running
         await updateTask(task._id, { 
             status: 'running',
             lastTriedAt: Date.now(),
@@ -62,7 +68,6 @@ async function updateTask(taskId, update) {
             { $set: update }
         )
         
-        // Get and return the updated task
         return await getTaskById(taskId)
     } catch (err) {
         logger.error('Error updating task', err)
@@ -80,9 +85,3 @@ async function getTaskById(taskId) {
     }
 }
 
-export const taskService = {
-    getNextTask,
-    performTask,
-    updateTask,
-    getTaskById
-}

@@ -1,15 +1,25 @@
 {
-  "name": "task-worker-micro-service",
+  "name": "server",
   "version": "1.0.0",
-  "description": "Micro-service for processing tasks from MongoDB queue",
+  "description": "production ready server",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "nodemon --env-file=.env index.js",
+    "server:dev": "nodemon --env-file=.env index.js",
+    "server:prod": "NODE_ENV=production node --env-file=.env index.js",
+    "server:prod:mac": "NODE_ENV=production node --env-file=.env index.js"
   },
+  "author": "Me",
+  "license": "ISC",
   "dependencies": {
-    "mongodb": "^6.6.2"
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "cryptr": "^6.0.3",
+    "express": "^4.17.1",
+    "mongodb": "^6.6.2",
+    "socket.io": "^4.2.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
